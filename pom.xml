@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>me.krishnamurti</groupId>
 	<artifactId>Pet-Clinic-Spring</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>Pet-Clinic-Spring</name>
 	
 	<packaging>pom</packaging>
@@ -42,7 +42,7 @@
 	
 	<scm>
 		<developerConnection>scm:git:git@github.com:krishna916/Pet-Clinic-Spring.git</developerConnection>
-	  <tag>HEAD</tag>
+	  <tag>Pet-Clinic-Spring-0.0.2</tag>
   </scm>
 
 	
