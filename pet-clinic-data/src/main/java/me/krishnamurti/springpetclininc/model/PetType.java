@@ -4,7 +4,7 @@ package me.krishnamurti.springpetclininc.model;
  * @author krishna
  *
  */
-public class PetType {
+public class PetType extends BaseEntity {
 
 	private String name;
 
