@@ -56,3 +56,5 @@ pom.xml.tag
 
 *.iml
 
+
+bin/
