@@ -6,6 +6,10 @@ package me.krishnamurti.springpetclininc.model;
  */
 public class PetType extends BaseEntity {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7219679835558455782L;
 	private String name;
 
 	public String getName() {
