@@ -6,13 +6,13 @@ package me.krishnamurti.springpetclininc.services.map;
 import java.util.Set;
 
 import me.krishnamurti.springpetclininc.model.Pet;
-import me.krishnamurti.springpetclininc.services.CrudService;
+import me.krishnamurti.springpetclininc.services.PetService;
 
 /**
  * @author krishna
  *
  */
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
 	@Override
 	public Pet save(Pet object) {

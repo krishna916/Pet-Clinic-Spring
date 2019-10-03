@@ -6,13 +6,13 @@ package me.krishnamurti.springpetclininc.services.map;
 import java.util.Set;
 
 import me.krishnamurti.springpetclininc.model.Owner;
-import me.krishnamurti.springpetclininc.services.CrudService;
+import me.krishnamurti.springpetclininc.services.OwnerService;
 
 /**
  * @author krishna
  *
  */
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
 	public Set<Owner> findAll() {
@@ -37,6 +37,12 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	@Override
 	public void deleteById(Long id) {
 		super.deleteById(id);
+	}
+
+	@Override
+	public Owner findByLastName(String lastName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
