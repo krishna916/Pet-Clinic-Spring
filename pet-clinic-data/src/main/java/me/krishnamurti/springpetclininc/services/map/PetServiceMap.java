@@ -5,6 +5,8 @@ package me.krishnamurti.springpetclininc.services.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import me.krishnamurti.springpetclininc.model.Pet;
 import me.krishnamurti.springpetclininc.services.PetService;
 
@@ -12,6 +14,7 @@ import me.krishnamurti.springpetclininc.services.PetService;
  * @author krishna
  *
  */
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
 	@Override
