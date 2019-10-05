@@ -5,6 +5,8 @@ package me.krishnamurti.springpetclininc.services.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import me.krishnamurti.springpetclininc.model.Vet;
 import me.krishnamurti.springpetclininc.services.VetService;
 
@@ -12,12 +14,12 @@ import me.krishnamurti.springpetclininc.services.VetService;
  * @author krishna
  *
  */
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
 	@Override
 	public Vet save(Vet object) {
-		// TODO Auto-generated method stub
-		return null;
+		return super.save(object.getId(), object);
 	}
 	
 	@Override
