@@ -56,5 +56,6 @@ pom.xml.tag
 
 *.iml
 
+.vscode/
 
 bin/
