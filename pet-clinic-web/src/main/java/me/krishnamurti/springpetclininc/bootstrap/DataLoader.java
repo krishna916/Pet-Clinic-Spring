@@ -3,17 +3,18 @@
  */
 package me.krishnamurti.springpetclininc.bootstrap;
 
+import java.time.LocalDate;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import me.krishnamurti.springpetclininc.model.Owner;
+import me.krishnamurti.springpetclininc.model.Pet;
 import me.krishnamurti.springpetclininc.model.PetType;
 import me.krishnamurti.springpetclininc.model.Vet;
 import me.krishnamurti.springpetclininc.services.OwnerService;
 import me.krishnamurti.springpetclininc.services.PetTypeService;
 import me.krishnamurti.springpetclininc.services.VetService;
-import me.krishnamurti.springpetclininc.services.map.OwnerServiceMap;
-import me.krishnamurti.springpetclininc.services.map.VetServiceMap;
 
 /**
  * @author krishna
@@ -40,24 +41,43 @@ public class DataLoader implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		
 		PetType dog = new PetType();
 		dog.setName("Dog");
 		PetType savedDogType = petTypeService.save(dog);
-		
+
 		PetType cat = new PetType();
 		dog.setName("Cat");
 		PetType savedCatType = petTypeService.save(cat);
-		
+
 		Owner owner1 = new Owner();
 		owner1.setFirstName("Owner1");
 		owner1.setLastName("lastName");
+		owner1.setAddress("some Address");
+		owner1.setCity("Some City");
+		owner1.setTelephone("123456789");
+		
+		Pet somePet = new Pet();
+		somePet.setPetType(savedDogType);
+		somePet.setOwner(owner1);
+		somePet.setBirthDate(LocalDate.now());
+		somePet.setName("somePetName");
+		owner1.getPets().add(somePet);
 
 		ownerService.save(owner1);
 
 		Owner owner2 = new Owner();
 		owner2.setFirstName("Owner2");
 		owner2.setLastName("lastName2");
+		owner2.setAddress("some Address");
+		owner2.setCity("Some City");
+		owner2.setTelephone("123456789");
+		
+		Pet somePet1 = new Pet();
+		somePet1.setPetType(savedCatType);
+		somePet1.setOwner(owner2);
+		somePet1.setBirthDate(LocalDate.now());
+		somePet1.setName("somePetName2");
+		owner2.getPets().add(somePet1);
 
 		ownerService.save(owner2);
 		System.out.println("Loaded Owners...");
