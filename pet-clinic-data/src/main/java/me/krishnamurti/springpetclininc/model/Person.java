@@ -1,12 +1,25 @@
 package me.krishnamurti.springpetclininc.model;
 
-public class Person extends BaseEntity{
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
+/**
+ * 
+ * @author krishna
+ *
+ */
+@MappedSuperclass
+public class Person extends BaseEntity {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7285096005771195369L;
+
+	@Column(name = "first_name")
 	private String firstName;
+
+	@Column(name = "last_name")
 	private String lastName;
 
 	public String getFirstName() {
@@ -29,5 +42,5 @@ public class Person extends BaseEntity{
 	public String toString() {
 		return "Person [firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
-	
+
 }
