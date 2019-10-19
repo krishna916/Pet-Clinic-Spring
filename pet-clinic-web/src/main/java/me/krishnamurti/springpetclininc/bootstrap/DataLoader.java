@@ -13,10 +13,12 @@ import me.krishnamurti.springpetclininc.model.Pet;
 import me.krishnamurti.springpetclininc.model.PetType;
 import me.krishnamurti.springpetclininc.model.Speciality;
 import me.krishnamurti.springpetclininc.model.Vet;
+import me.krishnamurti.springpetclininc.model.Visit;
 import me.krishnamurti.springpetclininc.services.OwnerService;
 import me.krishnamurti.springpetclininc.services.PetTypeService;
 import me.krishnamurti.springpetclininc.services.SpecialityService;
 import me.krishnamurti.springpetclininc.services.VetService;
+import me.krishnamurti.springpetclininc.services.VisitService;
 
 /**
  * @author krishna
@@ -29,18 +31,20 @@ public class DataLoader implements CommandLineRunner {
 	private final VetService vetService;
 	private final PetTypeService petTypeService;
 	private final SpecialityService specialityService;
+	private final VisitService visitService;
 
 	/**
 	 * @param ownerService
 	 * @param vetService
 	 */
 	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-				SpecialityService specialityService) {
+				SpecialityService specialityService, VisitService visitService) {
 		super();
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;
 		this.specialityService = specialityService;
+		this.visitService = visitService;
 	}
 
 	@Override
@@ -89,9 +93,14 @@ public class DataLoader implements CommandLineRunner {
 		somePet.setBirthDate(LocalDate.now());
 		somePet.setName("somePetName");
 		owner1.getPets().add(somePet);
-
+		
 		ownerService.save(owner1);
-
+		Visit somePetVisit = new Visit();
+		somePetVisit.setPet(somePet);
+		somePetVisit.setDate(LocalDate.now());
+		somePetVisit.setDescription("Sneezy");
+		visitService.save(somePetVisit);
+		
 		Owner owner2 = new Owner();
 		owner2.setFirstName("Owner2");
 		owner2.setLastName("lastName2");

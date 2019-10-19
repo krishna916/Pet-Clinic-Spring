@@ -18,7 +18,7 @@ import me.krishnamurti.springpetclininc.services.VetService;
  *
  */
 @Service
-@Profile("springdatajap")
+@Profile("springdatajpa")
 public class VetSDJpaService implements VetService {
 
 	private final VetRepository vetRepository;
