@@ -119,7 +119,7 @@ class OwnerSDJpaServiceTest {
 		Owner savedOwner = ownerSDJpaService.save(ownerToSave);
 		
 		assertNotNull(savedOwner);
-		verify(ownerRepository.save(any()));
+		verify(ownerRepository).save(any());
 	}
 
 	/**
